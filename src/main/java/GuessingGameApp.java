@@ -14,8 +14,8 @@ public class GuessingGameApp {
     int guesses = 4;
     int userGuess;
     boolean isAWinner = false;
-
-    while (isAWinner == false){
+    
+    while (!isAWinner) {
     
         System.out.println("Guess a number between 1 and 10.");
         userGuess = guessingGame.nextInt();
@@ -61,4 +61,6 @@ public class GuessingGameApp {
 
 
 }
+
+
 

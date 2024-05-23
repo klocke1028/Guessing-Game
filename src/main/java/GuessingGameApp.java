@@ -28,28 +28,30 @@ public class GuessingGameApp {
         else if (userGuess == -1) {
             System.exit(1);
         }
-        else if (userGuess < -1 || userGuess > 10 && guesses != 0) {
+        else if (userGuess < -1 || userGuess > 10 && guesses >= 1) {
             guesses--;
             System.out.println("Invalid answer. Try again.");
             System.out.println("Remaining guesses: " + guesses);
         }
-        else if (userGuess < randomNumber && guesses != 0) {
+        else if (userGuess < randomNumber && guesses >= 1) {
             guesses--;
             System.out.println("Sorry, the answer is greater than " + userGuess);
             System.out.println("Guesses remaining: " + guesses);
         }
-        else if (userGuess > randomNumber && guesses != 0) {
+        else if (userGuess > randomNumber && guesses >= 1) {
             guesses--;
             System.out.println("Sorry, the answer is less than " + userGuess);
             System.out.println("Guesses remaining: " + guesses);
         }
-        else if (userGuess == randomNumber) {
-            System.out.println(" :) Great job, you win!");
+        else if (userGuess == randomNumber && guesses >= 1) {
+            System.out.println(" :) Great job, you won!");
             break;
         }
-        else if (guesses == 0) {
-            System.out.println(" :( You lose. The number was " + randomNumber);
+        if (guesses == 0) {
+            System.out.println("You lose. The answer is " + randomNumber);
+            break;
         }
+       
             
         }
 
